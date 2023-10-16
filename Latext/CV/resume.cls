@@ -43,7 +43,7 @@
 %	HEADINGS COMMANDS: Commands for printing name and address
 %----------------------------------------------------------------------------------------
 
-\def \name#1{\def\@name{\textsf \LARGE{ #1}}} % Defines the \name command to set name
+\def \name#1{\def\@name{\textsf{  \Large #1}}} % Defines the \name command to set name
 \def \phone#1{\def\@phone{#1}} % Defines the \name command to set name
 \def \email#1{\def\@email{#1}} % Defines the \name command to set name
 \def \country#1{\def\@country{#1}} % Defines the \name command to set name
@@ -80,17 +80,17 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
-  \begin{adjustwidth}{0,6cm}{1,5cm}
+  \begin{adjustwidth}{0,6cm}{2cm}
   {\footnotesize
   \begin{multicols}{3}{
   	\printemail % Print the email with \email
-	\linebreak  	
+  \\[3pt] 
   	\printphone % Print the phone
   	
   	\columnbreak
   	
   	\printlocation %Print the location
-  	\linebreak  
+    \\[3pt] 
   	\printgit  %Print git repository
   	\columnbreak
   }\end{multicols}
@@ -124,6 +124,7 @@
  {\sffamily { \large #1}{\,}{ \footnotesize \bf \sffamily#3} \hfill 
  { \footnotesize \sffamily#2}} % Bold company name and date on the right
 \smallskip
+  \normalsize	
   \begin{list}{$\cdot$}{\leftmargin=0,3cm} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
